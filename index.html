@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //store usable options for the game
+        const options = ["rock", "paper", "scissors"];
+
+        //get the random choice from the computer
+        function computerPlay() {
+            const randomNum = Math.floor((Math.random() * options.length));
+            const computerSelection = options[randomNum];
+            return computerSelection;
+        }
+
+        //prompt the user for their choice and convert the choice to lowercase
+        function userPlay() {
+            const promptChoice = prompt("Choose Rock, Paper, or Scissors!");
+            const playerChoice = promptChoice.toLowerCase();
+            return playerChoice;
+        }
+
+        function game() {
+
+            //keep track of score
+            let playerScore = 0;
+            let computerScore = 0;
+
+            //loop through the game for 5 rounds
+            for(let i = 1; i <= 5; i++) {
+
+                const playerChoice = userPlay();
+                const computerChoice = computerPlay();
+
+                playRound(playerChoice, computerChoice);
+
+                //play a round of the game
+                function playRound(playerChoice, computerChoice) {
+
+                    if (playerChoice === computerChoice) {
+
+                        console.log("It's a tie!");
+                        playerScore++;
+                        computerScore++;
+
+                    } else if ((playerChoice === "rock" && computerChoice === "scissors") ||
+                        (playerChoice === "paper" && computerChoice === "rock") ||
+                        (playerChoice === "scissors" && computerChoice === "paper")) {
+
+                        console.log("Player wins! " + playerChoice + " beats " + computerChoice);
+                        playerScore++;
+
+                    } else {
+
+                        console.log("Computer wins! " + computerChoice + " beats " + playerChoice);
+                        computerScore++;
+                    }
+
+                }
+            }
+
+            console.log("Game Over! " + " Player: " + playerScore + " Computer: " + computerScore);
+
+        }
+
+        game();
+    </script>
+</body>
+
+</html>
