@@ -1,1 +1,55 @@
-/* future styles will go in here */
+html, body {
+    font-family: 'Bangers', cursive;
+    margin: 0;
+    padding:0;
+}
+
+body {
+    
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    width: 100%;
+    background-color: #ffc72e;
+}
+
+.playerChoices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.playerChoices i {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+i:hover {
+    color: #ffc72e;
+}
+
+.results-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Bangers', cursive;
+}
+
+.game-over-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bangers', cursive;
+}
+
+
